@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
+/* Light mode - Varme, innbydende farger */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --primary: #d97706;        /* Varm oransje - profesjonell og hjelpende */
+  --primary-hover: #ea580c;  /* Lysere oransje på hover */
+  --secondary: #f5f5f4;
+  --secondary-hover: #e7e5e4;
+  --accent: #0891b2;
+  --border: #e7e5e4;
+  --card-bg: #ffffff;
+  --muted: #78716c;
+  --muted-light: #a8a29e;
+}
+
+/* Dark mode - Mykere, mer behagelige farger */
+.dark {
+  --background: #1c1917;
+  --foreground: #fafaf9;
+  --primary: #fb923c;        /* Myk oransje for dark mode */
+  --primary-hover: #fdba74;  /* Lysere oransje på hover */
+  --secondary: #292524;
+  --secondary-hover: #44403c;
+  --accent: #22d3ee;
+  --border: #44403c;
+  --card-bg: #292524;
+  --muted: #a8a29e;
+  --muted-light: #78716c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-card-bg: var(--card-bg);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Utility classes */
+.bg-page { background-color: var(--background); }
+.bg-card { background-color: var(--card-bg); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-primary { background-color: var(--primary); }
+.text-foreground { color: var(--foreground); }
+.text-muted { color: var(--muted); }
+.text-primary { color: var(--primary); }
+.border-default { border-color: var(--border); }
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+}
+
+.card {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.card-secondary {
+  background-color: var(--secondary);
+  transition: background-color 0.3s ease;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
