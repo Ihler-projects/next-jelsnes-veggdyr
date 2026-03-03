@@ -9,192 +9,170 @@ import { fadeInUp, fadeInDown, staggerContainer, scaleUp } from "./lib/animation
 export default function Home() {
   return (
     <div style={{ backgroundColor: 'var(--background)' }} className="transition-colors duration-300">
-      {/* Hero Section - More engaging */}
-      <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-20 overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 rounded-full opacity-10 blur-3xl transition-colors"
-               style={{ backgroundColor: 'var(--primary)' }}></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full opacity-5 blur-3xl transition-colors"
-               style={{ backgroundColor: 'var(--primary)' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Hero Section - Personal and warm */}
+      <section className="relative pt-24 pb-12 lg:pt-32 lg:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left side - Text content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              {/* Badge */}
+              {/* Personal intro badge */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 transition-colors" 
-                style={{ backgroundColor: 'var(--secondary)', border: '1px solid var(--border)' }}
+                className="inline-flex items-center gap-3 mb-6"
               >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" 
-                        style={{ backgroundColor: 'var(--primary)' }}></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2" 
-                        style={{ backgroundColor: 'var(--primary)' }}></span>
-                </span>
-                <span className="text-sm font-medium transition-colors" style={{ color: 'var(--muted)' }}>
-                  Tilgjengelig for oppdrag nå
-                </span>
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 transition-colors"
+                     style={{ borderColor: 'var(--primary)' }}>
+                  <Image
+                    src="/hund_aksjon2.png"
+                    alt="Meg og hunden"
+                    width={48}
+                    height={48}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-medium transition-colors" style={{ color: 'var(--foreground)' }}>
+                    Hege & Nila
+                  </p>
+                  <p className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
+                    Sertifisert veggdyrsøk-team
+                  </p>
+                </div>
               </motion.div>
 
-              {/* Main headline */}
+              {/* Main headline - More conversational */}
               <motion.h1 
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-[1.15]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <span className="transition-colors block" style={{ color: 'var(--foreground)' }}>
-                  Har du
+                  Sliter du med
                 </span>
                 <span className="transition-colors block" style={{ color: 'var(--primary)' }}>
                   veggdyr?
                 </span>
+                <span className="transition-colors block text-3xl sm:text-4xl lg:text-5xl mt-2" style={{ color: 'var(--foreground)' }}>
+                  Jeg hjelper deg!
+                </span>
               </motion.h1>
 
-              {/* Subheadline */}
-              <motion.p 
-                className="text-xl sm:text-2xl mb-8 transition-colors leading-relaxed" 
-                style={{ color: 'var(--muted)' }}
+              {/* Personal description */}
+              <motion.div
+                className="space-y-4 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Min trent søkehund finner dem før de blir et stort problem. 
-                <span className="block mt-2 font-semibold" style={{ color: 'var(--foreground)' }}>
-                  Rask, diskret og pålitelig.
-                </span>
-              </motion.p>
+                <p className="text-lg sm:text-xl transition-colors leading-relaxed" style={{ color: 'var(--muted)' }}>
+                  Hei! Jeg er Hege, og sammen med min trent søkehund Nila hjelper jeg folk med å finne veggdyr tidlig.
+                </p>
+                <p className="text-base transition-colors" style={{ color: 'var(--muted)' }}>
+                  Vi jobber raskt, diskret og til en ærlig pris. Ingen store selskaper eller mellommenn – bare meg, Nila og mange års erfaring.
+                </p>
+              </motion.div>
 
               {/* CTA Buttons */}
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 mb-10"
+                className="flex flex-col sm:flex-row gap-4 mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <Button href="/kontakt">
-                  <span className="flex items-center gap-2">
-                    <span>Ring meg i dag</span>
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </span>
-                </Button>
+               
                 <Button href="/tjenester" variant="secondary">
-                  Se hvordan det fungerer
+                  Les mer om oss
                 </Button>
               </motion.div>
 
-              {/* Social proof */}
+              {/* Trust indicators - more personal */}
               <motion.div
-                className="flex items-center gap-6 flex-wrap"
+                className="flex items-start gap-6 p-4 rounded-xl transition-colors"
+                style={{ backgroundColor: 'var(--secondary)' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-colors"
-                           style={{ backgroundColor: 'var(--secondary)', borderColor: 'var(--background)', color: 'var(--primary)' }}>
-                        ✓
-                      </div>
+                <div className="flex-shrink-0">
+                  <div className="flex items-center gap-1 mb-1">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <svg key={i} className="w-4 h-4" style={{ color: 'var(--primary)' }} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
                     ))}
                   </div>
-                  <span className="text-sm transition-colors" style={{ color: 'var(--muted)' }}>
-                    50+ fornøyde kunder
-                  </span>
+                  <p className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
+                    Basert på 50+ anmeldelser
+                  </p>
                 </div>
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <svg key={i} className="w-5 h-5" style={{ color: 'var(--primary)' }} fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="text-sm ml-2 transition-colors" style={{ color: 'var(--muted)' }}>
-                    5.0
-                  </span>
+                <div className="border-l pl-6" style={{ borderColor: 'var(--border)' }}>
+                  <p className="text-sm font-medium transition-colors mb-1" style={{ color: 'var(--foreground)' }}>
+                    "Rask, profesjonell og hyggelig!"
+                  </p>
+                  <p className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
+                    - Maria, Oslo
+                  </p>
                 </div>
               </motion.div>
             </motion.div>
 
-            {/* Right side - Image with floating cards */}
+            {/* Right side - Image */}
             <motion.div 
               className="relative"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div className="relative">
                 {/* Main image */}
                 <div className="relative h-[450px] lg:h-[550px] rounded-3xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/dog-search.jpg"
-                    alt="Søkehund i aksjon"
+                    src="/hund_aksjon2.png"
+                    alt="Nila søkehunden i aksjon"
                     fill
                     className="object-cover"
                     priority
                   />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
 
-                {/* Floating card 1 - Top right */}
+                {/* Simple info badge - bottom */}
                 <motion.div 
-                  className="absolute -top-4 -right-4 card rounded-2xl p-4 shadow-xl border transition-colors max-w-[200px]"
+                  className="absolute -bottom-6 left-6 right-6 card rounded-2xl p-5 shadow-xl border transition-colors"
                   style={{ borderColor: 'var(--border)' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
-                         style={{ backgroundColor: 'var(--primary)' }}>
-                      <span className="text-2xl">🎯</span>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center transition-colors"
+                           style={{ backgroundColor: 'var(--primary)' }}>
+                        <span className="text-2xl">🐕</span>
+                      </div>
+                      <div>
+                        <p className="font-bold transition-colors" style={{ color: 'var(--foreground)' }}>
+                          Nila
+                        </p>
+                        <p className="text-sm transition-colors" style={{ color: 'var(--muted)' }}>
+                          Sertifisert søkehund
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-bold text-2xl transition-colors" style={{ color: 'var(--foreground)' }}>
+                    <div className="text-right">
+                      <p className="text-2xl font-bold transition-colors" style={{ color: 'var(--primary)' }}>
                         98%
-                      </div>
-                      <div className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
+                      </p>
+                      <p className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
                         Nøyaktighet
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Floating card 2 - Bottom left */}
-                <motion.div 
-                  className="absolute -bottom-4 -left-4 card rounded-2xl p-4 shadow-xl border transition-colors max-w-[220px]"
-                  style={{ borderColor: 'var(--border)' }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
-                         style={{ backgroundColor: 'var(--secondary)' }}>
-                      <span className="text-2xl">⚡</span>
-                    </div>
-                    <div>
-                      <div className="font-bold transition-colors" style={{ color: 'var(--foreground)' }}>
-                        Samme dag
-                      </div>
-                      <div className="text-xs transition-colors" style={{ color: 'var(--muted)' }}>
-                        Rask respons
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </motion.div>

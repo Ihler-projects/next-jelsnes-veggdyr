@@ -54,7 +54,7 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} antialiased`}
       >
         <Navigation />
-        <main className="pt-20">
+        <main className="">
           {children}
         </main>
         <Footer />

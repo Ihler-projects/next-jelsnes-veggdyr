@@ -25,7 +25,7 @@ export default function Tjenester() {
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div className="relative h-[400px] rounded-2xl overflow-hidden card-secondary">
               <Image
-                src="/bedbug.jpg"
+                src="/hund_aksjon.jpg"
                 alt="Veggdyr"
                 fill
                 className="object-cover"
