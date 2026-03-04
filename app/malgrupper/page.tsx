@@ -66,9 +66,9 @@ export default function Malgrupper() {
           </div>
 
           <div className="space-y-12">
-            {targetGroups.map((group, index) => (
+            {targetGroups.map((group) => (
               <div 
-                key={index}
+                key={group.title}
                 className="card-secondary rounded-2xl p-8 lg:p-12"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 transition-colors">
@@ -78,10 +78,11 @@ export default function Malgrupper() {
                   {group.description}
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {group.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start">
+                  {group.benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-start">
                       <svg 
-                        className="w-6 h-6 text-foreground mr-3 flex-shrink-0 mt-0.5 transition-colors" 
+                        className="w-6 h-6 mr-3 flex-shrink-0 mt-0.5 transition-colors" 
+                        style={{ color: 'var(--icon-primary)' }}
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -96,17 +97,16 @@ export default function Malgrupper() {
             ))}
           </div>
 
-          <div className="mt-16 text-center rounded-2xl p-12 transition-colors duration-300" style={{ backgroundColor: 'var(--primary)' }}>
-            <h2 className="text-2xl font-bold text-white mb-4">
+          <div className="mt-16 text-center rounded-2xl p-12 transition-colors duration-300" style={{ backgroundColor: 'var(--btn-primary-bg)' }}>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: 'var(--btn-primary-text)' }}>
               Finner du ikke din målgruppe?
             </h2>
-            <p className="text-white/90 mb-6">
+            <p className="mb-6" style={{ color: 'var(--btn-primary-text)', opacity: 0.9 }}>
               Vi tilpasser våre tjenester til dine behov. Ta kontakt for en uforpliktende samtale.
             </p>
             <Button 
               href="/kontakt" 
-              className="bg-white hover:bg-white/90 text-foreground"
-              style={{ backgroundColor: 'white', color: 'var(--foreground)' }}
+              style={{ backgroundColor: 'var(--card-bg)', color: 'var(--foreground)' }}
             >
               Kontakt oss
             </Button>

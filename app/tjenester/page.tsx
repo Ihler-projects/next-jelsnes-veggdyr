@@ -37,7 +37,7 @@ export default function Tjenester() {
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 text-white rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--primary)' }}>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }}>
                     1
                   </div>
                   <div>
@@ -48,7 +48,7 @@ export default function Tjenester() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 text-white rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--primary)' }}>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }}>
                     2
                   </div>
                   <div>
@@ -59,7 +59,7 @@ export default function Tjenester() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 text-white rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--primary)' }}>
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 transition-colors" style={{ backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }}>
                     3
                   </div>
                   <div>
@@ -120,17 +120,16 @@ export default function Tjenester() {
             </div>
           </div>
 
-          <div className="rounded-2xl p-12 text-center transition-colors duration-300" style={{ backgroundColor: 'var(--primary)' }}>
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="rounded-2xl p-12 text-center transition-colors duration-300" style={{ backgroundColor: 'var(--btn-primary-bg)' }}>
+            <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--btn-primary-text)' }}>
               Klar for å bestille?
             </h2>
-            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="mb-8 max-w-2xl mx-auto" style={{ color: 'var(--btn-primary-text)', opacity: 0.9 }}>
               Kontakt oss i dag for en uforpliktende samtale om dine behov.
             </p>
             <Button 
               href="/kontakt"
-              className="bg-white hover:bg-white/90"
-              style={{ backgroundColor: 'white', color: 'var(--foreground)' }}
+              style={{ backgroundColor: 'var(--card-bg)', color: 'var(--foreground)' }}
             >
               Kontakt oss
             </Button>

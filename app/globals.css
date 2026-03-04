@@ -2,32 +2,78 @@
 
 /* Light mode - Varme, innbydende farger */
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --primary: #d97706;        /* Varm oransje - profesjonell og hjelpende */
-  --primary-hover: #ea580c;  /* Lysere oransje på hover */
-  --secondary: #f5f5f4;
-  --secondary-hover: #e7e5e4;
-  --accent: #0891b2;
-  --border: #e7e5e4;
-  --card-bg: #ffffff;
-  --muted: #78716c;
-  --muted-light: #a8a29e;
+  /* Bakgrunner */
+  --background: #f2ede0;           /* Hovedbakgrunn for hele siden */
+  --secondary: #e8e0d5;            /* Sekundær bakgrunn for seksjoner */
+  --card-bg: #faf8f5;              /* Bakgrunn for kort/cards */
+  
+  /* Tekst */
+  --foreground: #3d3530;           /* Hovedtekst */
+  --muted: #6b5f56;                /* Dempet tekst (beskrivelser) */
+  --muted-light: #9a8d83;          /* Ekstra dempet tekst */
+  
+  /* Primærfarge (brand) */
+  --primary: #caaea4;              /* Primærfarge - knapper, lenker, accenter */
+  --primary-hover: #b89a8f;        /* Primærfarge hover state */
+  
+  /* Knapper */
+  --btn-primary-bg: #caaea4;       /* Primærknapp bakgrunn */
+  --btn-primary-hover: #b89a8f;    /* Primærknapp hover */
+  --btn-primary-text: #ffffff;     /* Primærknapp tekst */
+  --btn-secondary-bg: transparent; /* Sekundærknapp bakgrunn */
+  --btn-secondary-hover: #e8e0d5;  /* Sekundærknapp hover */
+  --btn-secondary-text: #3d3530;   /* Sekundærknapp tekst */
+  --btn-secondary-border: #d9cfc2; /* Sekundærknapp border */
+  
+  /* Ikoner */
+  --icon-primary: #caaea4;         /* Primære ikoner */
+  --icon-secondary: #6b5f56;       /* Sekundære ikoner */
+  --icon-muted: #9a8d83;           /* Dempede ikoner */
+  
+  /* Borders og dividers */
+  --border: #d9cfc2;               /* Standard border farge */
+  --secondary-hover: #ddd3c6;      /* Hover state for sekundære elementer */
+  
+  /* Accent */
+  --accent: #a88f85;               /* Accent farge for spesielle elementer */
 }
 
 /* Dark mode - Mykere, mer behagelige farger */
 .dark {
-  --background: #1c1917;
-  --foreground: #fafaf9;
-  --primary: #fb923c;        /* Myk oransje for dark mode */
-  --primary-hover: #fdba74;  /* Lysere oransje på hover */
-  --secondary: #292524;
-  --secondary-hover: #44403c;
-  --accent: #22d3ee;
-  --border: #44403c;
-  --card-bg: #292524;
-  --muted: #a8a29e;
-  --muted-light: #78716c;
+  /* Bakgrunner */
+  --background: #403c39;           /* Hovedbakgrunn for hele siden */
+  --secondary: #4f4a46;            /* Sekundær bakgrunn for seksjoner */
+  --card-bg: #48433f;              /* Bakgrunn for kort/cards */
+  
+  /* Tekst */
+  --foreground: #e8e3db;           /* Hovedtekst */
+  --muted: #b5aca4;                /* Dempet tekst (beskrivelser) */
+  --muted-light: #cdc6bf;          /* Ekstra dempet tekst */
+  
+  /* Primærfarge (brand) */
+  --primary: #caaea4;              /* Primærfarge - knapper, lenker, accenter */
+  --primary-hover: #dcc3b8;        /* Primærfarge hover state */
+  
+  /* Knapper */
+  --btn-primary-bg: #caaea4;       /* Primærknapp bakgrunn */
+  --btn-primary-hover: #dcc3b8;    /* Primærknapp hover */
+  --btn-primary-text: #2d2926;     /* Primærknapp tekst (mørk for kontrast) */
+  --btn-secondary-bg: transparent; /* Sekundærknapp bakgrunn */
+  --btn-secondary-hover: #4f4a46;  /* Sekundærknapp hover */
+  --btn-secondary-text: #e8e3db;   /* Sekundærknapp tekst */
+  --btn-secondary-border: #5d5752; /* Sekundærknapp border */
+  
+  /* Ikoner */
+  --icon-primary: #caaea4;         /* Primære ikoner */
+  --icon-secondary: #b5aca4;       /* Sekundære ikoner */
+  --icon-muted: #8a8179;           /* Dempede ikoner */
+  
+  /* Borders og dividers */
+  --border: #5d5752;               /* Standard border farge */
+  --secondary-hover: #5d5752;      /* Hover state for sekundære elementer */
+  
+  /* Accent */
+  --accent: #b89a8f;               /* Accent farge for spesielle elementer */
 }
 
 @theme inline {
@@ -78,24 +124,24 @@ html {
 .border-default { border-color: var(--border); }
 
 .btn-primary {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   transition: background-color 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--btn-primary-hover);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--foreground);
-  border: 1px solid var(--border);
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background-color: var(--secondary);
+  background-color: var(--btn-secondary-hover);
 }
 
 .card {

@@ -20,9 +20,9 @@ export function Button({ href, onClick, variant = 'primary', children, className
     if (style?.backgroundColor) return; // Don't override custom styles
     
     if (variant === 'primary') {
-      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--primary-hover)';
+      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--btn-primary-hover)';
     } else {
-      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--secondary-hover)';
+      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--btn-secondary-hover)';
     }
   };
   
@@ -30,18 +30,18 @@ export function Button({ href, onClick, variant = 'primary', children, className
     if (style?.backgroundColor) return; // Don't override custom styles
     
     if (variant === 'primary') {
-      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--primary)';
+      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--btn-primary-bg)';
     } else {
-      (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent';
+      (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--btn-secondary-bg)';
     }
   };
 
   const defaultStyle = variant === 'primary' 
-    ? { backgroundColor: 'var(--primary)', color: 'white' }
+    ? { backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }
     : { 
-        borderColor: 'var(--border)', 
-        color: 'var(--foreground)', 
-        backgroundColor: 'transparent',
+        borderColor: 'var(--btn-secondary-border)', 
+        color: 'var(--btn-secondary-text)', 
+        backgroundColor: 'var(--btn-secondary-bg)',
         border: '1px solid'
       };
 

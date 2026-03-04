@@ -33,7 +33,7 @@ export function Navigation() {
         scrolled ? 'py-3' : 'py-4'
       }`}
       style={{ 
-        backgroundColor: scrolled ? 'var(--card-bg)' : 'transparent',
+        backgroundColor: scrolled ? 'var(--background)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
         borderBottom: scrolled ? '1px solid var(--border)' : 'none',
         boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.05)' : 'none'
@@ -54,16 +54,9 @@ export function Navigation() {
               href="/" 
               className="flex items-center gap-2 group"
             >
-              <motion.div 
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300"
-                style={{ backgroundColor: 'var(--primary)' }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="text-xl">🐕</span>
-              </motion.div>
+            
               <span className="text-xl font-bold transition-colors" style={{ color: 'var(--foreground)' }}>
-                Veggdyrsøk
+                Jelsnes Hundespor
               </span>
             </Link>
           </motion.div>
@@ -88,15 +81,15 @@ export function Navigation() {
                     pathname === link.href ? 'font-semibold' : ''
                   }`}
                   style={{ 
-                    color: pathname === link.href ? 'var(--primary)' : 'var(--muted)',
-                    backgroundColor: pathname === link.href ? 'var(--secondary)' : 'transparent'
+                    color: pathname === link.href ? 'var(--foreground)' : 'var(--muted)',
+                   
                   }}
                 >
                   {link.label}
                   {pathname === link.href && (
                     <motion.div
                       className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
-                      style={{ backgroundColor: 'var(--primary)' }}
+                      style={{ backgroundColor: 'var(--foreground)' }}
                       layoutId="activeNav"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -120,8 +113,8 @@ export function Navigation() {
             >
               <Link
                 href="/kontakt"
-                className="px-5 py-2.5 rounded-lg text-sm font-medium text-white transition-all duration-200"
-                style={{ backgroundColor: 'var(--primary)' }}
+                className="px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
+                style={{ backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }}
               >
                 Ring meg
               </Link>
@@ -139,7 +132,7 @@ export function Navigation() {
             <motion.button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg transition-colors"
-              style={{ color: 'var(--foreground)', backgroundColor: 'var(--secondary)' }}
+              style={{ color: 'var(--icon-secondary)', backgroundColor: 'var(--secondary)' }}
               aria-label="Toggle menu"
               whileTap={{ scale: 0.95 }}
             >
@@ -240,8 +233,8 @@ export function Navigation() {
                 <Link
                   href="/kontakt"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 rounded-lg text-base font-semibold text-center text-white transition-colors"
-                  style={{ backgroundColor: 'var(--primary)' }}
+                  className="block px-4 py-3 rounded-lg text-base font-semibold text-center transition-colors"
+                  style={{ backgroundColor: 'var(--btn-primary-bg)', color: 'var(--btn-primary-text)' }}
                 >
                   Ring meg
                 </Link>
